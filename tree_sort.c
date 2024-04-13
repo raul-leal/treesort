@@ -7,7 +7,8 @@ void sortAscending(Node* node, Element arr[], int* i){
     if(node == NULL)
         return;
     sortAscending(node->left, arr, i);
-    arr[*i++] = node->key;
+    arr[*i] = node->key;
+    (*i)++;
     sortAscending(node->right, arr, i);
 }
 
@@ -15,7 +16,8 @@ void sortDescending(Node* node, Element arr[], int* i){
     if(node == NULL)
         return;
     sortDescending(node->right, arr, i);
-    arr[*i++] = node->key;
+    arr[*i] = node->key;
+    (*i)++;
     sortDescending(node->left, arr, i);
 }
 
